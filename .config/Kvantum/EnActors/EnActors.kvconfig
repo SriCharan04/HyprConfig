@@ -1,0 +1,39 @@
+[%General]
+author=lassen
+comment=Matugen generated theme for wallpaper inspired theme
+composite=true
+popup_blurring=true
+tooltip_shadow_depth=0
+scroll_width=8
+slider_width=4
+slider_handle_width=18
+slider_handle_length=18
+splitter_width=7
+layout_spacing=2
+
+[GeneralColors]
+# Window and panel backgrounds
+window.color=#171216
+base.color=#241e22
+button.color=#201a1e
+light.color=#3e373c
+mid.light.color=#2f282d
+dark.color=#201a1e
+mid.color=#4e444b
+
+# Highlights and accents
+highlight.color=#f2b3e5
+inactive.highlight.color=#663560
+tooltip.text.color=#ecdfe5
+
+# Text
+text.color=#d1c2cb
+window.text.color=#ecdfe5
+button.text.color=#ecdfe5
+disabled.text.color=#4e444b
+link.color=#f2b3e5
+link.visited.color=#dbbfd2
+
+# Borders and outlines
+outline.color=#9a8d95
+focus.color=#f2b3e5

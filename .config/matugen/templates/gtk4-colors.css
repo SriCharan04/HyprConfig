@@ -1,0 +1,83 @@
+/* GTK4 color variables with Material You palette */
+{% for name, value in colors -%}
+@define-color {{name}} {{value.default.hex}};
+{% endfor -%}
+
+/* GTK4 semantic color mappings for modern apps */
+@define-color accent_bg_color @primary;
+@define-color accent_fg_color @on_primary;
+@define-color accent_color @primary;
+
+@define-color destructive_bg_color @error;
+@define-color destructive_fg_color @on_error;
+@define-color destructive_color @error;
+
+@define-color success_bg_color @tertiary_container;
+@define-color success_fg_color @on_tertiary_container;
+@define-color success_color @tertiary;
+
+@define-color warning_bg_color @tertiary_fixed;
+@define-color warning_fg_color @on_tertiary_fixed;
+@define-color warning_color @tertiary;
+
+@define-color error_bg_color @error_container;
+@define-color error_fg_color @on_error_container;
+@define-color error_color @error;
+
+/* Window and view colors */
+@define-color window_bg_color @surface;
+@define-color window_fg_color @on_surface;
+@define-color view_bg_color @surface_container_low;
+@define-color view_fg_color @on_surface;
+
+/* Headerbar colors for GTK4 */
+@define-color headerbar_bg_color @surface_container_low;
+@define-color headerbar_fg_color @on_surface;
+@define-color headerbar_border_color @outline_variant;
+@define-color headerbar_backdrop_color @surface_dim;
+@define-color headerbar_shade_color @shadow;
+
+/* Sidebar colors for GTK4 */
+@define-color sidebar_bg_color @surface_container_lowest;
+@define-color sidebar_fg_color @on_surface_variant;
+@define-color sidebar_backdrop_color @surface;
+@define-color sidebar_shade_color @shadow;
+@define-color sidebar_border_color @outline_variant;
+
+/* Card colors */
+@define-color card_bg_color @surface_container;
+@define-color card_fg_color @on_surface;
+@define-color card_shade_color @shadow;
+
+/* Dialog colors */
+@define-color dialog_bg_color @surface_container_high;
+@define-color dialog_fg_color @on_surface;
+
+/* Popover colors */
+@define-color popover_bg_color @surface_container_highest;
+@define-color popover_fg_color @on_surface;
+@define-color popover_shade_color @shadow;
+
+/* Thumbnail and image colors */
+@define-color thumbnail_bg_color @surface_container;
+@define-color thumbnail_fg_color @on_surface_variant;
+
+/* Misc utility colors */
+@define-color shade_color @shadow;
+@define-color scrollbar_outline_color @outline_variant;
+
+/* Blue links */
+@define-color link_color @primary;
+@define-color link_visited_color @secondary;
+
+/* Legacy GTK3 compatibility */
+@define-color theme_bg_color @surface;
+@define-color theme_fg_color @on_surface;
+@define-color theme_base_color @surface_container;
+@define-color theme_text_color @on_surface;
+@define-color theme_selected_bg_color @primary_container;
+@define-color theme_selected_fg_color @on_primary_container;
+@define-color insensitive_bg_color @surface_variant;
+@define-color insensitive_fg_color @outline;
+@define-color borders @outline_variant;
+@define-color unfocused_borders @outline;

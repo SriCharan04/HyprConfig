@@ -1,0 +1,39 @@
+[%General]
+author=lassen
+comment=Matugen generated theme for wallpaper inspired theme
+composite=true
+popup_blurring=true
+tooltip_shadow_depth=0
+scroll_width=8
+slider_width=4
+slider_handle_width=18
+slider_handle_length=18
+splitter_width=7
+layout_spacing=2
+
+[GeneralColors]
+# Window and panel backgrounds
+window.color={{colors.surface.default.hex}}
+base.color={{colors.surface_container.default.hex}}
+button.color={{colors.surface_container_low.default.hex}}
+light.color={{colors.surface_bright.default.hex}}
+mid.light.color={{colors.surface_container_high.default.hex}}
+dark.color={{colors.surface_container_low.dark.hex}}
+mid.color={{colors.surface_variant.default.hex}}
+
+# Highlights and accents
+highlight.color={{colors.primary.default.hex}}
+inactive.highlight.color={{colors.primary_container.default.hex}}
+tooltip.text.color={{colors.on_surface.default.hex}}
+
+# Text
+text.color={{colors.on_surface_variant.default.hex}}
+window.text.color={{colors.on_surface.default.hex}}
+button.text.color={{colors.on_surface.default.hex}}
+disabled.text.color={{colors.outline_variant.default.hex}}
+link.color={{colors.primary.default.hex}}
+link.visited.color={{colors.secondary.default.hex}}
+
+# Borders and outlines
+outline.color={{colors.outline.default.hex}}
+focus.color={{colors.primary.default.hex}}

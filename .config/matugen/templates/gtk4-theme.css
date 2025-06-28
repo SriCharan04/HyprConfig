@@ -1,0 +1,921 @@
+@import 'colors.css';
+
+/* Complete GTK4 theme with Material You colors */
+
+* {
+  transition: all 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* Window styling */
+window {
+  background-color: @window_bg_color;
+  color: @window_fg_color;
+}
+
+/* Modern headerbar for GTK4 */
+headerbar {
+  background: @headerbar_bg_color;
+  color: @headerbar_fg_color;
+  border-bottom: 1px solid @headerbar_border_color;
+  border-radius: 12px 12px 0 0;
+  box-shadow: 0 1px 3px alpha(@headerbar_shade_color, 0.1);
+  min-height: 46px;
+  padding: 0 12px;
+}
+
+headerbar:backdrop {
+  background-color: @headerbar_backdrop_color;
+  color: mix(@headerbar_fg_color, @headerbar_backdrop_color, 0.7);
+}
+
+/* Split headerbar */
+headerbar.titlebar {
+  border-radius: 12px 12px 0 0;
+}
+
+/* Buttons with Material Design 3 styling */
+button {
+  background: @surface_container_low;
+  border: 1px solid transparent;
+  border-radius: 20px;
+  color: @on_surface;
+  font-weight: 500;
+  min-height: 36px;
+  padding: 0 16px;
+}
+
+button:hover {
+  background: @surface_container;
+  box-shadow: 0 1px 3px alpha(@shadow, 0.12), 0 1px 2px alpha(@shadow, 0.24);
+}
+
+button:active {
+  background: @surface_container_high;
+  box-shadow: 0 1px 2px alpha(@shadow, 0.16);
+  transform: scale(0.98);
+}
+
+button.suggested-action {
+  background: @accent_bg_color;
+  color: @accent_fg_color;
+  font-weight: 600;
+}
+
+button.suggested-action:hover {
+  background: mix(@accent_bg_color, @surface_bright, 0.9);
+  box-shadow: 0 2px 4px alpha(@accent_bg_color, 0.3);
+}
+
+button.destructive-action {
+  background: @destructive_bg_color;
+  color: @destructive_fg_color;
+  font-weight: 600;
+}
+
+button.destructive-action:hover {
+  background: mix(@destructive_bg_color, @surface_bright, 0.9);
+  box-shadow: 0 2px 4px alpha(@destructive_bg_color, 0.3);
+}
+
+button.flat {
+  background: transparent;
+  border: none;
+  border-radius: 12px;
+  box-shadow: none;
+}
+
+button.flat:hover {
+  background: alpha(@on_surface, 0.08);
+}
+
+button.flat:active {
+  background: alpha(@on_surface, 0.12);
+}
+
+/* Circular buttons */
+button.circular {
+  border-radius: 50%;
+  min-height: 40px;
+  min-width: 40px;
+  padding: 0;
+}
+
+/* Pill buttons */
+button.pill {
+  border-radius: 9999px;
+}
+
+/* Text entries with floating labels */
+entry {
+  background: @surface_container;
+  border: 1px solid @outline_variant;
+  border-radius: 12px;
+  color: @on_surface;
+  min-height: 48px;
+  padding: 12px 16px;
+}
+
+entry:focus-within {
+  border-color: @primary;
+  box-shadow: 0 0 0 2px alpha(@primary, 0.2);
+  outline: none;
+}
+
+entry:disabled {
+  background: @surface_variant;
+  color: @outline;
+}
+
+/* Search entries */
+entry.search {
+  border-radius: 24px;
+  padding-left: 20px;
+}
+
+/* Switches with modern Material Design */
+switch {
+  background: @outline_variant;
+  border-radius: 16px;
+  font-size: 0;
+  min-height: 32px;
+  min-width: 52px;
+  outline-offset: 2px;
+}
+
+switch:checked {
+  background: @primary;
+}
+
+switch:disabled {
+  background: alpha(@outline_variant, 0.38);
+}
+
+switch slider {
+  background: @surface;
+  border-radius: 50%;
+  margin: 4px;
+  min-height: 24px;
+  min-width: 24px;
+  box-shadow: 0 1px 3px alpha(@shadow, 0.4);
+  transition: all 0.2s cubic-bezier(0.4, 0.0, 0.2, 1);
+}
+
+switch:checked slider {
+  background: @on_primary;
+  margin-left: 24px;
+}
+
+switch:hover slider {
+  box-shadow: 0 0 0 8px alpha(@on_surface, 0.04),
+              0 1px 3px alpha(@shadow, 0.4);
+}
+
+switch:checked:hover slider {
+  box-shadow: 0 0 0 8px alpha(@primary, 0.04),
+              0 1px 3px alpha(@shadow, 0.4);
+}
+
+/* Check boxes */
+checkbutton check {
+  background: transparent;
+  border: 2px solid @outline;
+  border-radius: 2px;
+  min-height: 18px;
+  min-width: 18px;
+  transition: all 0.2s ease-in-out;
+}
+
+checkbutton:hover check {
+  box-shadow: 0 0 0 8px alpha(@on_surface, 0.04);
+}
+
+checkbutton check:checked {
+  background: @primary;
+  border-color: @primary;
+  color: @on_primary;
+}
+
+checkbutton check:checked:hover {
+  box-shadow: 0 0 0 8px alpha(@primary, 0.04);
+}
+
+/* Radio buttons */
+radiobutton radio {
+  background: transparent;
+  border: 2px solid @outline;
+  border-radius: 50%;
+  min-height: 18px;
+  min-width: 18px;
+  transition: all 0.2s ease-in-out;
+}
+
+radiobutton:hover radio {
+  box-shadow: 0 0 0 8px alpha(@on_surface, 0.04);
+}
+
+radiobutton radio:checked {
+  border-color: @primary;
+}
+
+radiobutton radio:checked:hover {
+  box-shadow: 0 0 0 8px alpha(@primary, 0.04);
+}
+
+/* Progress bars */
+progressbar {
+  font-size: 0;
+}
+
+progressbar trough {
+  background: @surface_variant;
+  border-radius: 8px;
+  min-height: 8px;
+}
+
+progressbar progress {
+  background: @primary;
+  border-radius: 8px;
+  min-height: 8px;
+}
+
+/* Level bars */
+levelbar trough {
+  background: @surface_variant;
+  border-radius: 6px;
+  min-height: 12px;
+}
+
+levelbar block {
+  border-radius: 4px;
+  margin: 2px;
+  min-height: 8px;
+}
+
+levelbar block.filled {
+  background: @primary;
+}
+
+levelbar block.high {
+  background: @success_color;
+}
+
+levelbar block.low {
+  background: @warning_color;
+}
+
+levelbar block.empty {
+  background: transparent;
+}
+
+/* Scales (sliders) */
+scale {
+  margin: 12px;
+}
+
+scale trough {
+  background: @outline_variant;
+  border-radius: 6px;
+  min-height: 4px;
+}
+
+scale highlight {
+  background: @primary;
+  border-radius: 6px;
+}
+
+scale slider {
+  background: @primary;
+  border: 3px solid @surface;
+  border-radius: 50%;
+  box-shadow: 0 1px 3px alpha(@shadow, 0.4);
+  min-height: 20px;
+  min-width: 20px;
+  transition: all 0.2s ease-in-out;
+}
+
+scale slider:hover {
+  box-shadow: 0 0 0 8px alpha(@primary, 0.04),
+              0 1px 3px alpha(@shadow, 0.4);
+}
+
+scale slider:active {
+  box-shadow: 0 0 0 12px alpha(@primary, 0.12),
+              0 1px 3px alpha(@shadow, 0.4);
+}
+
+/* Scrollbars */
+scrollbar {
+  background: transparent;
+  transition: all 0.3s ease-in-out;
+}
+
+scrollbar slider {
+  background: alpha(@outline, 0.5);
+  border-radius: 6px;
+  min-height: 40px;
+  min-width: 6px;
+  transition: all 0.2s ease-in-out;
+}
+
+scrollbar:hover slider {
+  background: @outline;
+  min-width: 12px;
+}
+
+scrollbar.horizontal slider {
+  min-height: 6px;
+  min-width: 40px;
+}
+
+scrollbar.horizontal:hover slider {
+  min-height: 12px;
+}
+
+/* Spinbuttons */
+spinbutton {
+  border-radius: 12px;
+}
+
+spinbutton entry {
+  border-radius: 12px 0 0 12px;
+  border-right: none;
+}
+
+spinbutton button {
+  background: @surface_container;
+  border-left: none;
+  border-radius: 0;
+  min-width: 36px;
+}
+
+spinbutton button:last-child {
+  border-radius: 0 12px 12px 0;
+}
+
+spinbutton button:hover {
+  background: @surface_container_high;
+}
+
+/* Notebook tabs */
+notebook {
+  background: @surface;
+}
+
+notebook > header {
+  background: @surface_container_low;
+  border-bottom: 1px solid @outline_variant;
+  padding: 0 12px;
+}
+
+notebook > header > tabs {
+  margin: 0;
+}
+
+notebook > header > tabs > tab {
+  background: transparent;
+  border: none;
+  border-radius: 12px 12px 0 0;
+  color: @on_surface_variant;
+  font-weight: 500;
+  margin: 0 2px;
+  min-height: 40px;
+  padding: 0 16px;
+  transition: all 0.2s ease-in-out;
+}
+
+notebook > header > tabs > tab:hover {
+  background: alpha(@on_surface, 0.04);
+  color: @on_surface;
+}
+
+notebook > header > tabs > tab:checked {
+  background: @surface;
+  border-bottom: 3px solid @primary;
+  color: @primary;
+}
+
+/* Popovers */
+popover {
+  background: @popover_bg_color;
+  border: 1px solid @outline_variant;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px alpha(@popover_shade_color, 0.15),
+              0 4px 8px alpha(@popover_shade_color, 0.1);
+  color: @popover_fg_color;
+  margin: 8px;
+  padding: 8px;
+}
+
+popover > contents {
+  padding: 8px;
+}
+
+popover separator {
+  background: @outline_variant;
+  margin: 4px 0;
+}
+
+/* Menus */
+popover.menu {
+  padding: 8px;
+}
+
+popover.menu button {
+  background: transparent;
+  border: none;
+  border-radius: 8px;
+  font-weight: normal;
+  min-height: 36px;
+  padding: 0 12px;
+  text-align: left;
+}
+
+popover.menu button:hover {
+  background: @surface_container;
+}
+
+popover.menu button:active {
+  background: @surface_container_high;
+}
+
+/* Tooltips */
+tooltip {
+  background: @inverse_surface;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px alpha(@shadow, 0.2);
+  color: @inverse_on_surface;
+  font-size: 0.8em;
+  margin: 8px;
+  padding: 8px 12px;
+}
+
+/* Dialogs */
+dialog {
+  background: @dialog_bg_color;
+  border-radius: 16px;
+  color: @dialog_fg_color;
+}
+
+dialog > .dialog-content {
+  padding: 24px;
+}
+
+dialog > .dialog-action-area {
+  border-top: 1px solid @outline_variant;
+  padding: 16px 24px;
+}
+
+dialog > .dialog-action-area button {
+  margin: 0 4px;
+}
+
+/* Message dialogs */
+messagedialog {
+  background: @dialog_bg_color;
+  color: @dialog_fg_color;
+}
+
+messagedialog .message-area {
+  padding: 24px;
+}
+
+messagedialog .response-area {
+  border-top: 1px solid @outline_variant;
+  padding: 16px 24px;
+}
+
+/* Cards */
+.card {
+  background: @card_bg_color;
+  border: 1px solid @outline_variant;
+  border-radius: 16px;
+  box-shadow: 0 1px 3px alpha(@card_shade_color, 0.1);
+  color: @card_fg_color;
+  margin: 8px;
+  padding: 16px;
+}
+
+.card:hover {
+  box-shadow: 0 2px 6px alpha(@card_shade_color, 0.15);
+}
+
+/* Sidebars */
+.sidebar {
+  background: @sidebar_bg_color;
+  border-right: 1px solid @sidebar_border_color;
+  color: @sidebar_fg_color;
+}
+
+.sidebar:backdrop {
+  background: @sidebar_backdrop_color;
+}
+
+.sidebar row {
+  border-radius: 12px;
+  margin: 2px 8px;
+  min-height: 40px;
+  padding: 0 12px;
+}
+
+.sidebar row:hover {
+  background: alpha(@on_surface, 0.04);
+}
+
+.sidebar row:selected {
+  background: @primary_container;
+  color: @on_primary_container;
+  font-weight: 600;
+}
+
+/* List boxes */
+listbox {
+  background: @view_bg_color;
+  border-radius: 12px;
+  color: @view_fg_color;
+}
+
+listbox row {
+  border-radius: 8px;
+  margin: 2px 8px;
+  min-height: 48px;
+  padding: 0 12px;
+  transition: all 0.2s ease-in-out;
+}
+
+listbox row:hover {
+  background: alpha(@on_surface, 0.04);
+}
+
+listbox row:selected {
+  background: @primary_container;
+  color: @on_primary_container;
+}
+
+/* Flow boxes */
+flowbox {
+  background: @view_bg_color;
+  padding: 8px;
+}
+
+flowbox flowboxchild {
+  border-radius: 12px;
+  padding: 8px;
+  transition: all 0.2s ease-in-out;
+}
+
+flowbox flowboxchild:hover {
+  background: alpha(@on_surface, 0.04);
+  transform: translateY(-2px);
+}
+
+flowbox flowboxchild:selected {
+  background: @primary_container;
+  color: @on_primary_container;
+}
+
+/* Grid view */
+gridview {
+  background: @view_bg_color;
+  padding: 8px;
+}
+
+gridview child {
+  border-radius: 12px;
+  margin: 4px;
+  transition: all 0.2s ease-in-out;
+}
+
+gridview child:hover {
+  background: alpha(@on_surface, 0.04);
+  transform: scale(1.02);
+}
+
+gridview child:selected {
+  background: @primary_container;
+  color: @on_primary_container;
+}
+
+/* Column view */
+columnview {
+  background: @view_bg_color;
+  color: @view_fg_color;
+}
+
+columnview row {
+  min-height: 40px;
+  padding: 0 12px;
+}
+
+columnview row:hover {
+  background: alpha(@on_surface, 0.04);
+}
+
+columnview row:selected {
+  background: @primary_container;
+  color: @on_primary_container;
+}
+
+/* Tree expander */
+treeexpander {
+  border-radius: 6px;
+  margin: 2px;
+  min-height: 24px;
+  min-width: 24px;
+}
+
+treeexpander:hover {
+  background: alpha(@on_surface, 0.04);
+}
+
+/* Search entries with modern styling */
+searchentry {
+  border-radius: 24px;
+  min-height: 40px;
+}
+
+/* Dropdowns */
+dropdown {
+  background: @surface_container;
+  border: 1px solid @outline_variant;
+  border-radius: 12px;
+  min-height: 40px;
+  padding: 0 12px;
+}
+
+dropdown:hover {
+  background: @surface_container_high;
+}
+
+dropdown > popover {
+  margin-top: 4px;
+}
+
+/* Color chooser */
+colorchooser {
+  background: @dialog_bg_color;
+}
+
+colorswatch {
+  border: 2px solid transparent;
+  border-radius: 8px;
+  margin: 2px;
+  min-height: 32px;
+  min-width: 32px;
+}
+
+colorswatch:hover {
+  border-color: @outline;
+}
+
+colorswatch:selected {
+  border-color: @primary;
+  border-width: 3px;
+}
+
+/* File chooser */
+filechooser {
+  background: @dialog_bg_color;
+}
+
+/* Calendar */
+calendar {
+  background: @view_bg_color;
+  border: 1px solid @outline_variant;
+  border-radius: 12px;
+  color: @view_fg_color;
+  padding: 8px;
+}
+
+calendar day {
+  border-radius: 8px;
+  min-height: 32px;
+  min-width: 32px;
+  padding: 0;
+}
+
+calendar day:hover {
+  background: alpha(@on_surface, 0.04);
+}
+
+calendar day:selected {
+  background: @primary;
+  color: @on_primary;
+  font-weight: 600;
+}
+
+/* Text view */
+textview {
+  background: @view_bg_color;
+  color: @view_fg_color;
+}
+
+textview text {
+  background: @surface_container;
+  border-radius: 8px;
+  color: @on_surface;
+  padding: 12px;
+}
+
+textview text:focus-within {
+  box-shadow: 0 0 0 2px alpha(@primary, 0.2);
+}
+
+textview text selection {
+  background: @primary_container;
+  color: @on_primary_container;
+}
+
+/* Status pages */
+statuspage {
+  background: @view_bg_color;
+  color: @view_fg_color;
+  padding: 48px 24px;
+}
+
+/* Preferences */
+preferencespage {
+  background: @view_bg_color;
+}
+
+preferencesgroup {
+  background: @surface_container;
+  border: 1px solid @outline_variant;
+  border-radius: 16px;
+  margin: 16px;
+  padding: 16px;
+}
+
+preferencesgroup > box > box > label {
+  color: @on_surface_variant;
+  font-size: 0.9em;
+  font-weight: 600;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+}
+
+/* Action rows */
+row.activatable {
+  min-height: 48px;
+  padding: 0 12px;
+  transition: all 0.2s ease-in-out;
+}
+
+row.activatable:hover {
+  background: alpha(@on_surface, 0.04);
+}
+
+row.activatable:active {
+  background: alpha(@on_surface, 0.08);
+}
+
+/* Expandable rows */
+row.expander {
+  background: @surface_container;
+  border-radius: 12px;
+  margin: 4px 8px;
+}
+
+row.expander:hover {
+  background: @surface_container_high;
+}
+
+/* Info bar */
+infobar {
+  border-radius: 12px;
+  margin: 8px;
+  padding: 12px 16px;
+}
+
+infobar.info {
+  background: @primary_container;
+  color: @on_primary_container;
+}
+
+infobar.warning {
+  background: @warning_bg_color;
+  color: @warning_fg_color;
+}
+
+infobar.error {
+  background: @error_bg_color;
+  color: @error_fg_color;
+}
+
+infobar.success {
+  background: @success_bg_color;
+  color: @success_fg_color;
+}
+
+/* Toast */
+toast {
+  background: @inverse_surface;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px alpha(@shadow, 0.2);
+  color: @inverse_on_surface;
+  margin: 12px;
+  padding: 12px 16px;
+}
+
+/* Window decorations for GTK4 */
+window.csd {
+  border-radius: 12px;
+  box-shadow: 0 8px 24px alpha(@shadow, 0.15),
+              0 4px 8px alpha(@shadow, 0.1);
+}
+
+window.csd:backdrop {
+  box-shadow: 0 4px 12px alpha(@shadow, 0.1),
+              0 2px 4px alpha(@shadow, 0.05);
+}
+
+window.maximized,
+window.fullscreen,
+window.tiled {
+  border-radius: 0;
+}
+
+/* Window controls */
+windowcontrols button {
+  background: transparent;
+  border: none;
+  border-radius: 50%;
+  margin: 0 3px;
+  min-height: 24px;
+  min-width: 24px;
+  padding: 0;
+  transition: all 0.2s ease-in-out;
+}
+
+windowcontrols button:hover {
+  background: alpha(@on_surface, 0.08);
+}
+
+windowcontrols button.close {
+  color: @error;
+}
+
+windowcontrols button.close:hover {
+  background: @error;
+  color: @on_error;
+}
+
+windowcontrols button.minimize,
+windowcontrols button.maximize {
+  color: @on_surface;
+}
+
+/* Focus indication */
+*:focus:focus-visible {
+  outline: 2px solid @primary;
+  outline-offset: 2px;
+  outline-style: solid;
+}
+
+button:focus:focus-visible {
+  outline-offset: 4px;
+}
+
+/* Disabled state */
+*:disabled {
+  color: alpha(@on_surface, 0.38);
+  background-color: alpha(@on_surface, 0.04);
+}
+
+/* High contrast mode */
+@media (prefers-contrast: high) {
+  * {
+    border-width: 2px;
+  }
+  
+  button,
+  entry {
+    border-color: @on_surface;
+  }
+  
+  *:focus:focus-visible {
+    outline-width: 3px;
+    outline-color: @primary;
+  }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none;
+    animation: none;
+  }
+}
+
+/* Dark color scheme preference */
+@media (prefers-color-scheme: dark) {
+  :root {
+    color-scheme: dark;
+  }
+}
+
+/* Light color scheme preference */
+@media (prefers-color-scheme: light) {
+  :root {
+    color-scheme: light;
+  }
+}

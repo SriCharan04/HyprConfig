@@ -1,0 +1,17 @@
+# General Aliases
+alias brave-browser="brave-browser --password-store=basic"
+alias ls="exa"
+alias lst="exa --tree"
+alias cat="bat"
+#alias cd="zoxide"
+alias grep="grep --color=auto" 
+alias diff="diff --color=auto" 
+alias rm="rm -ri"
+alias mv="mv -i"
+alias vim="nvim"
+alias nvim="nvim --listen /tmp/nvimsocket$(head -c8 /dev/urandom | od -An -tx1 | tr -d ' \n') -c ':RegenPalette'"
+alias df='df -h'  
+alias free='free -m'
+alias android-emulator="QT_QPA_PLATFORM=xcb; $HOME/Android/Sdk/emulator/emulator"
+alias cfg='git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
+

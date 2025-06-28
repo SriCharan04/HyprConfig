@@ -1,0 +1,72 @@
+/* GTK3 color variables */
+{% for name, value in colors -%}
+@define-color {{name}} {{value.default.hex}};
+{% endfor -%}
+
+/* GTK3 semantic color mappings */
+@define-color theme_bg_color @surface;
+@define-color theme_fg_color @on_surface;
+@define-color theme_base_color @surface_container;
+@define-color theme_text_color @on_surface;
+@define-color theme_selected_bg_color @primary_container;
+@define-color theme_selected_fg_color @on_primary_container;
+@define-color insensitive_bg_color @surface_variant;
+@define-color insensitive_fg_color @outline;
+@define-color borders @outline_variant;
+@define-color unfocused_borders @outline;
+@define-color warning_color @tertiary;
+@define-color error_color @error;
+@define-color success_color @tertiary_container;
+
+/* Headerbar colors */
+@define-color headerbar_bg_color @surface_container_low;
+@define-color headerbar_fg_color @on_surface;
+@define-color headerbar_border_color @outline_variant;
+@define-color headerbar_backdrop_color @surface;
+@define-color headerbar_shade_color @shadow;
+
+/* Sidebar colors */
+@define-color sidebar_bg_color @surface_container_low;
+@define-color sidebar_fg_color @on_surface_variant;
+@define-color sidebar_backdrop_color @surface;
+@define-color sidebar_shade_color @shadow;
+
+/* Notebook/tab colors */
+@define-color notebook_tab_bg @surface_container;
+@define-color notebook_tab_active_bg @primary_container;
+@define-color notebook_tab_fg @on_surface_variant;
+@define-color notebook_tab_active_fg @on_primary_container;
+
+/* Menu and popover colors */
+@define-color menu_bg_color @surface_container_highest;
+@define-color menu_fg_color @on_surface;
+@define-color menu_selected_bg_color @primary_container;
+@define-color menu_selected_fg_color @on_primary_container;
+
+/* Button colors */
+@define-color button_bg_color @surface_container_low;
+@define-color button_fg_color @on_surface;
+@define-color button_hover_bg_color @surface_container;
+@define-color button_active_bg_color @primary_container;
+@define-color button_active_fg_color @on_primary_container;
+
+/* Entry/input colors */
+@define-color entry_bg_color @surface_container;
+@define-color entry_fg_color @on_surface;
+@define-color entry_border_color @outline_variant;
+@define-color entry_focus_border_color @primary;
+
+/* Switch and check colors */
+@define-color switch_bg_color @outline_variant;
+@define-color switch_active_bg_color @primary;
+@define-color switch_slider_color @surface_bright;
+@define-color switch_active_slider_color @on_primary;
+
+/* Scrollbar colors */
+@define-color scrollbar_bg_color transparent;
+@define-color scrollbar_slider_color @outline;
+@define-color scrollbar_slider_hover_color @outline_variant;
+
+/* Tooltip colors */
+@define-color tooltip_bg_color @inverse_surface;
+@define-color tooltip_fg_color @inverse_on_surface;
