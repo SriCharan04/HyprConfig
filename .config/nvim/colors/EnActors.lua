@@ -6,50 +6,50 @@ local M = {}
 -- Color definitions from Material You palette
 local colors = {
   -- Surface colors
-  background = "#171216",
-  surface = "#171216",
-  surface_variant = "#4e444b",
-  surface_container = "#241e22",
-  surface_container_low = "#201a1e",
-  surface_container_high = "#2f282d",
-  surface_container_highest = "#3a3337",
-  surface_dim = "#171216",
-  surface_bright = "#3e373c",
+  background = "#16130b",
+  surface = "#16130b",
+  surface_variant = "#4c4639",
+  surface_container = "#231f17",
+  surface_container_low = "#1f1b13",
+  surface_container_high = "#2e2921",
+  surface_container_highest = "#39342b",
+  surface_dim = "#16130b",
+  surface_bright = "#3d392f",
   
   -- On-surface colors
-  on_background = "#ecdfe5",
-  on_surface = "#ecdfe5",
-  on_surface_variant = "#d1c2cb",
+  on_background = "#eae1d4",
+  on_surface = "#eae1d4",
+  on_surface_variant = "#cfc5b4",
   
   -- Primary colors
-  primary = "#f2b3e5",
-  on_primary = "#4c1f48",
-  primary_container = "#663560",
-  on_primary_container = "#ffd7f4",
-  primary_fixed = "#ffd7f4",
-  primary_fixed_dim = "#f2b3e5",
-  on_primary_fixed = "#340831",
-  on_primary_fixed_variant = "#663560",
+  primary = "#e5c36c",
+  on_primary = "#3e2e00",
+  primary_container = "#594400",
+  on_primary_container = "#ffdf94",
+  primary_fixed = "#ffdf94",
+  primary_fixed_dim = "#e5c36c",
+  on_primary_fixed = "#251a00",
+  on_primary_fixed_variant = "#594400",
   
   -- Secondary colors
-  secondary = "#dbbfd2",
-  on_secondary = "#3d2b39",
-  secondary_container = "#554050",
-  on_secondary_container = "#f8daee",
-  secondary_fixed = "#f8daee",
-  secondary_fixed_dim = "#dbbfd2",
-  on_secondary_fixed = "#271624",
-  on_secondary_fixed_variant = "#554050",
+  secondary = "#d6c5a0",
+  on_secondary = "#392f15",
+  secondary_container = "#51452a",
+  on_secondary_container = "#f3e1bb",
+  secondary_fixed = "#f3e1bb",
+  secondary_fixed_dim = "#d6c5a0",
+  on_secondary_fixed = "#231a04",
+  on_secondary_fixed_variant = "#51452a",
   
   -- Tertiary colors
-  tertiary = "#f5b8a6",
-  on_tertiary = "#4c261a",
-  tertiary_container = "#663c2e",
-  on_tertiary_container = "#ffdbd0",
-  tertiary_fixed = "#ffdbd0",
-  tertiary_fixed_dim = "#f5b8a6",
-  on_tertiary_fixed = "#321207",
-  on_tertiary_fixed_variant = "#663c2e",
+  tertiary = "#aecfac",
+  on_tertiary = "#1b361e",
+  tertiary_container = "#314d33",
+  on_tertiary_container = "#caebc7",
+  tertiary_fixed = "#caebc7",
+  tertiary_fixed_dim = "#aecfac",
+  on_tertiary_fixed = "#05210a",
+  on_tertiary_fixed_variant = "#314d33",
   
   -- Error colors
   error = "#ffb4ab",
@@ -58,16 +58,16 @@ local colors = {
   on_error_container = "#ffdad6",
   
   -- Outline and utility colors
-  outline = "#9a8d95",
-  outline_variant = "#4e444b",
+  outline = "#989080",
+  outline_variant = "#4c4639",
   scrim = "#000000",
   shadow = "#000000",
-  surface_tint = "#f2b3e5",
+  surface_tint = "#e5c36c",
   
   -- Inverse colors
-  inverse_surface = "#ecdfe5",
-  inverse_on_surface = "#352e33",
-  inverse_primary = "#804d78",
+  inverse_surface = "#eae1d4",
+  inverse_on_surface = "#343027",
+  inverse_primary = "#755b0b",
 }
 
 function M.setup()

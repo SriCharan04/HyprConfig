@@ -11,4 +11,4 @@ if [ $HYPRGAMEMODE = 1 ] ; then
         keyword decoration:rounding 0"
     exit
 fi
-hyprctl reload
+#hyprctl reload

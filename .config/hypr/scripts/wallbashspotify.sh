@@ -4,8 +4,8 @@
 
 ScrDir=`dirname "$(realpath "$0")"`
 source $ScrDir/globalcontrol.sh
-scol="${XDG_CONFIG_HOME:-$HOME/.config}/spicetify/Themes/Sleek/color.ini"
-dcol="${XDG_CONFIG_HOME:-$HOME/.config}/spicetify/Themes/Sleek/Wall-Dcol.ini"
+scol="${XDG_CONFIG_HOME:-$HOME/.config}/spicetify/Themes/EnActors/color.ini"
+dcol="${XDG_CONFIG_HOME:-$HOME/.config}/spicetify/Themes/EnActors/EnActors.ini"
 
 # regen conf
 
@@ -17,7 +17,7 @@ if pkg_installed spotify && pkg_installed spicetify-cli ; then
         pkexec chmod a+wr /opt/spotify/Apps -R
     fi
 
-    if [ "$(spicetify config | awk '{if ($1=="color_scheme") print $2}')" != "Wallbash" ] ; then
+    if [ "$(spicetify config | awk '{if ($1=="color_scheme") print $2}')" != "EnActors" ] ; then
         spicetify &> /dev/null
         mkdir -p ~/.config/spotify
         touch ~/.config/spotify/prefs
@@ -25,8 +25,8 @@ if pkg_installed spotify && pkg_installed spicetify-cli ; then
         sed -i "/^prefs_path/ s+=.*$+= $HOME/.config/spotify/prefs+g" "${sptfyConf}"
         tar -xzf ${CloneDir}/Source/arcs/Spotify_Sleek.tar.gz -C ~/.config/spicetify/Themes/
         spicetify backup apply
-        spicetify config current_theme Sleek
-        spicetify config color_scheme Wallbash
+        spicetify config current_theme EnActors
+        spicetify config color_scheme EnActors
         spicetify apply
     fi
 

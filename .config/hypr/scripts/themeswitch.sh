@@ -137,7 +137,7 @@ flatpak --user override --env=ICON_THEME="${IconSet}"
 
 # hyprland
 ln -fs $ConfDir/hypr/themes/${ThemeSet}.conf $ConfDir/hypr/themes/theme.conf
-hyprctl reload
+#hyprctl reload
 
 
 # wallbash

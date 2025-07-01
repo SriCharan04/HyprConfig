@@ -7,7 +7,7 @@ lockFile="/tmp/hyrpdots$(id -u)swwwallpaper.lock"
 [ -e "$lockFile" ] && echo "An instance of the script is already running..." && exit 1
 touch "${lockFile}"
 trap 'rm -f ${lockFile}' EXIT
-
+Monitor=$(hyprctl monitors -j | jq -r '.[0].name')
 
 # define functions
 
@@ -63,19 +63,37 @@ Wall_Change()
 
 Wall_Set()
 {
-    if [ -z $xtrans ] ; then
-        xtrans="grow"
+    local transition="$4"
+    echo $transition
+    # Default to "grow" if no argument provided
+    if [ -z "$transition" ] || [ "$transition" = "shrink" ]; then
+      xtrans="outer"              # swww’s "outer" gives a shrink‐to‐center effect
+    elif [ "$transition" = "grow" ]; then
+      xtrans="grow"      
+    elif [ "$transition" = "none" ]; then
+      xtrans="none"        
+    else
+      echo "Wall_Set: unknown transition, using 'none'."
+      xtrans="none"
     fi
-
     #? getting the real path as symlinks too glitch
-    swww img "$(readlink "${wallSet}")" \
+    WallCmd="swww img \"$(readlink "$wallSet")\" \
     --transition-bezier .43,1.19,1,.4 \
-    --transition-type "$xtrans" \
+    --transition-type \"$xtrans\" \
     --transition-duration 0.7 \
     --transition-fps 60 \
     --invert-y \
-    --transition-pos "$( hyprctl cursorpos )"    
-
+    --transition-pos \"$( hyprctl cursorpos )\""
+    echo $WallCmd
+    VideoPath=$(echo "$(readlink $wallSet)" | sed -E 's|/swww/([^/]+)/([^/]+)\.tiff$|/swww/\1.Videos/\2.mp4|g')
+    echo $VideoPath
+    if [[ -e  "$VideoPath" ]]; then
+	VidCmd="mpvpaper -l background -o 'no-audio --loop-file=no --video-unscaled=no --vf=scale=1920:1080:flags=lanczos' $Monitor \"$VideoPath\""
+    else
+	VidCmd="true"
+    fi
+    echo $VidCmd
+    parallel  -j2 ::: "$WallCmd" "$VidCmd"
 }
 
 

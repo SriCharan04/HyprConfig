@@ -55,7 +55,7 @@ end
 apply_dynamic_colorscheme()
 
 -- Set up Lazy
-local lazypath = vim.fn.stdpath("config") .. "/plugins/lazy.nvim"
+local lazypath = vim.fn.stdpath("config") .. "/lua/plugins/lazy.nvim"
 if not (vim.uv or vim.loop).fs_stat(lazypath) then
   local lazyrepo = "https://github.com/folke/lazy.nvim.git"
   local out = vim.fn.system({ "git", "clone", "--filter=blob:none", "--branch=stable", lazyrepo, lazypath })
